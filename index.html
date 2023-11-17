@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Parallax Scrolling Effect</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <section class="zoom">
+        <img src="ParallaxScrollingImages-20220606T174815Z-001/ParallaxScrollingImages/mountain1.png" alt="" id="layer1">
+        <img src="ParallaxScrollingImages-20220606T174815Z-001/ParallaxScrollingImages/mountain2.png" alt="" id="layer2">
+        <img src="ParallaxScrollingImages-20220606T174815Z-001/ParallaxScrollingImages/text.png" alt="" id="text">
+    </section>
+    <section class="content">
+        <h2>Simple Background Parallax Using Javascript</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita corrupti consequuntur quibusdam molestiae ea tempore, animi qui accusamus earum iste dolore cum! Qui, distinctio. Ratione maxime molestiae beatae fugit velit? Magni perspiciatis, possimus natus corrupti odit, nam ad maxime iusto dolores quidem accusantium accusamus eveniet, dolorem earum ratione tenetur tempora?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita corrupti consequuntur quibusdam molestiae ea tempore, animi qui accusamus earum iste dolore cum! Qui, distinctio. Ratione maxime molestiae beatae fugit velit? Magni perspiciatis, possimus natus corrupti odit, nam ad maxime iusto dolores quidem accusantium accusamus eveniet, dolorem earum ratione tenetur tempora?</p>
+    </section>
+    <script type="text/javascript">
+        var layer1 = document.getElementById("layer1");
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function(e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer1.style.width = (100 + scroll/5) + '%';
+        });
+
+        var layer2 = document.getElementById("layer2");
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function(e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll/5) + '%';
+            layer2.style.left =  scroll/30 + '%';
+        });
+
+        var text = document.getElementById("text");
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function(e) {
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll/15) + '%';
+            text.style.top =  - scroll/20 + '%';
+        });
+    </script>
+</body>
+</html>
